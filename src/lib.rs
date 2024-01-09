@@ -318,10 +318,10 @@ mod tests {
 }
 
 /// ```should_panic
-/// use mapcell::MoveCell;
+/// use scopedcell::ScopedCell;
 ///
-/// let cell = MoveCell::new(1);
-/// cell.update(|x| cell.update(|x| *x += 1));
+/// let cell = ScopedCell::new(1);
+/// cell.borrow(|x| cell.borrow(|x| *x += 1));
 /// ```
 #[allow(dead_code)]
 struct ReentrantTest;
